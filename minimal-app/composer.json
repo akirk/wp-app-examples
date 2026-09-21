@@ -4,7 +4,7 @@
     "type": "wordpress-plugin",
     "require": {
         "php": ">=7.4",
-        "akirk/wp-app": "dev-main"
+        "akirk/wp-app": "*@dev"
     },
     "repositories": [
         {

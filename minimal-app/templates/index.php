@@ -8,7 +8,9 @@
 <?php wp_app_body_open(); ?>
 
 <h1>Hello from Minimal App!</h1>
-<p>This should work with just 3 lines of PHP.</p>
+<p>This small plugin demonstrates routes, selectable themes, and template fallback.</p>
+<p><a href="<?php echo esc_url( home_url( '/minimal/about' ) ); ?>">About this example</a></p>
 
+<?php wp_app_body_close(); ?>
 </body>
 </html>
