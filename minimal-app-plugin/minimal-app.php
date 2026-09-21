@@ -13,9 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Include Composer autoloader
 if ( ! file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-    add_action( 'admin_notices', function() {
-        echo '<div class="notice notice-error"><p>Minimal Web App: Please run <code>composer install</code> in the plugin directory.</p></div>';
-    } );
+    add_action(
+        'admin_notices',
+        function () {
+            echo '<div class="notice notice-error"><p>Minimal Web App: Please run <code>composer install</code> in the plugin directory.</p></div>';
+        }
+    );
     return;
 }
 
@@ -29,10 +32,26 @@ class MinimalApp {
     public function __construct() {
         // Initialize WpApp - should have sensible defaults
         $this->app = new WpApp( plugin_dir_path( __FILE__ ) . 'templates', 'my-minimal-app' );
+		$this->app->register_theme(
+			'compact',
+			__( 'Compact', 'minimal-web-app' ),
+			plugin_dir_path( __FILE__ ) . 'templates/compact'
+		);
 
         add_action( 'plugins_loaded', [ $this, 'init' ] );
+		add_action( 'wp_app_load_theme_my-minimal-app_compact', [ $this, 'load_compact_theme' ] );
         register_activation_hook( __FILE__, [ $this, 'activate' ] );
     }
+
+	public function load_compact_theme() {
+		wp_app_enqueue_style(
+			'minimal-app-compact',
+			plugins_url( 'assets/compact.css', __FILE__ ),
+			[],
+			'1.0.0',
+			'my-minimal-app'
+		);
+	}
 
     public function init() {
         // The framework should automatically:
