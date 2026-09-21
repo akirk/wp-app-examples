@@ -14,7 +14,9 @@ A complete example demonstrating the WpApp framework with the BaseApp pattern, i
 The fastest way to try this example is with WordPress Playground:
 
 ```bash
-npx @wp-playground/cli run examples/community-app
+cd examples/community-app
+composer install
+npx @wp-playground/cli@latest server --auto-mount --login
 ```
 
 This will spin up a local WordPress instance with the Community App plugin already installed and activated.
