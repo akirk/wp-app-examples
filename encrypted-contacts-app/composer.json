@@ -5,15 +5,6 @@
 	"license": "GPL-2.0-or-later",
 	"require": {
 		"php": ">=7.4",
-		"akirk/wp-app": "*@dev"
-	},
-	"repositories": {
-		"wp-app": {
-			"type": "path",
-			"url": "../../",
-			"options": {
-				"symlink": false
-			}
-		}
+		"akirk/wp-app": "dev-main"
 	}
 }
