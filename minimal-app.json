@@ -13,10 +13,10 @@
 			"step": "installPlugin",
 			"pluginData": {
 				"resource": "git:directory",
-				"url": "https://github.com/akirk/wp-app",
+				"url": "https://github.com/akirk/wp-app-examples",
 				"ref": "main",
 				"refType": "branch",
-				"path": "examples/minimal-app"
+				"path": "minimal-app"
 			},
 			"options": {
 				"targetFolderName": "minimal-app",

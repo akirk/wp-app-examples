@@ -1,0 +1,64 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "WP-App Encrypted Contacts Example",
+		"description": "A contacts app example using WpApp with client-side encrypted fields",
+		"author": "Alex Kirk",
+		"categories": ["starter", "webapp", "privacy"]
+	},
+	"landingPage": "/encrypted-contacts/",
+	"login": true,
+	"steps": [
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/akirk/wp-app-examples",
+				"ref": "main",
+				"refType": "branch",
+				"path": "encrypted-contacts-app"
+			},
+			"options": {
+				"targetFolderName": "encrypted-contacts-app",
+				"activate": false
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/akirk/wp-app",
+				"ref": "main",
+				"refType": "branch",
+				"path": "src"
+			},
+			"options": {
+				"targetFolderName": "encrypted-contacts-app/vendor/akirk/wp-app/src",
+				"activate": false
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/akirk/wp-app",
+				"ref": "main",
+				"refType": "branch",
+				"path": "assets"
+			},
+			"options": {
+				"targetFolderName": "encrypted-contacts-app/vendor/akirk/wp-app/assets",
+				"activate": false
+			}
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/plugins/encrypted-contacts-app/vendor/autoload.php",
+			"data": "<?php\n$wp_app_src = __DIR__ . '/akirk/wp-app/src/';\nrequire_once $wp_app_src . 'functions.php';\nrequire_once $wp_app_src . 'class-registry.php';\n"
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "encrypted-contacts-app/encrypted-contacts-app.php"
+		}
+	]
+}

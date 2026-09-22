@@ -23,7 +23,9 @@ add_action(
 				'show_site_name'               => true,
 			]
 		);
-		$app->register_theme( 'compact', __( 'Compact', 'minimal-app' ), __DIR__ . '/templates/compact' );
+		if ( method_exists( $app, 'register_theme' ) ) {
+			$app->register_theme( 'compact', __( 'Compact', 'minimal-app' ), __DIR__ . '/templates/compact' );
+		}
 		$app->route( 'about' );
 
 		add_action(
