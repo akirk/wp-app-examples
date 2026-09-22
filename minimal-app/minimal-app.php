@@ -24,16 +24,16 @@ add_action(
 			]
 		);
 		if ( method_exists( $app, 'register_theme' ) ) {
-			$app->register_theme( 'compact', __( 'Compact', 'minimal-app' ), __DIR__ . '/templates/compact' );
+			$app->register_theme( 'card', __( 'Card', 'minimal-app' ), __DIR__ . '/templates/card' );
 		}
 		$app->route( 'about' );
 
 		add_action(
-			'wp_app_load_theme_minimal_compact',
+			'wp_app_load_theme_minimal_card',
 			function () {
 				wp_app_enqueue_style(
-					'minimal-app-compact',
-					plugins_url( 'assets/compact.css', __FILE__ ),
+					'minimal-app-card',
+					plugins_url( 'assets/card.css', __FILE__ ),
 					[],
 					'1.0.0',
 					'minimal'

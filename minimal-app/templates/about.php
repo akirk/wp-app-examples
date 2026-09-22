@@ -9,7 +9,7 @@
 
 <main>
 	<h1>About the Minimal App</h1>
-	<p>This page comes from the default template directory, even when the Compact theme is selected.</p>
+	<p>This page comes from the default template directory, even when the Card theme is selected.</p>
 	<p><a href="<?php echo esc_url( home_url( '/minimal/' ) ); ?>">Back to the app</a></p>
 </main>
 
