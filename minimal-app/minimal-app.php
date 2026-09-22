@@ -23,9 +23,16 @@ add_action(
 				'show_site_name'               => true,
 			]
 		);
-		if ( method_exists( $app, 'register_theme' ) ) {
-			$app->register_theme( 'card', __( 'Card', 'minimal-app' ), __DIR__ . '/templates/card' );
-		}
+		add_filter(
+			'wp_app_init_minimal',
+			function ( $app ) {
+				if ( method_exists( $app, 'register_theme' ) ) {
+					$app->register_theme( 'card', __( 'Card', 'minimal-app' ), __DIR__ . '/templates/card' );
+				}
+
+				return $app;
+			}
+		);
 		$app->route( 'about' );
 
 		add_action(
