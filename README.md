@@ -4,7 +4,7 @@ Example WordPress plugins for [`akirk/wp-app`](https://github.com/akirk/wp-app).
 
 ## Try in Playground
 
-- [Minimal App](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/akirk/wp-app-examples/main/minimal-appj.json)
+- [Minimal App](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/akirk/wp-app-examples/main/minimal-app.json)
 - [Community App](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/akirk/wp-app-examples/main/community-app.json)
 - [Encrypted Contacts App](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/akirk/wp-app-examples/main/encrypted-contacts-app.json)
 
